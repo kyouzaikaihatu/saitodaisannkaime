@@ -1,0 +1,177 @@
+@charset "utf-8";
+
+o {font-weight: bold}
+
+ul {
+    padding: 0;
+  }
+  
+  ul li, ol li {
+    color: #404040;
+    border-left: solid 6px #1fa67a;/*左側の線*/
+    border-bottom: solid 2px #dadada;/*下に灰色線*/
+    background: whitesmoke;
+    margin-bottom: 5px;/*下のバーとの余白*/
+    line-height: 1.5;
+    margin-right: 0.5;
+    padding: 0.5em;
+    list-style-type: none!important;/*ポチ消す*/
+    font-weight: bold;
+  }
+
+  .fadeIn {
+    animation-name: fadeInAnime;
+    animation-duration:3s;
+    animation-delay:0.5s;
+    animation-fill-mode:forwards;
+    opacity: 0;
+    }
+    
+    @keyframes fadeInAnime{
+      0% {
+        opacity: 0;
+      }
+    
+      100% {
+        opacity: 1;
+      }
+    }
+
+
+/*========= レイアウトのためのCSS ===============*/
+
+p{
+  position: absolute;
+  top: 7%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}
+
+/*========= body背景色の変化CSS ===============*/
+
+body {
+  width: 100%;
+  height: 100vh;
+  background:linear-gradient(45deg, #41bbf4,#cf9ae2,#93d2ef);/*グラデーションを定義*/
+  background-size: 200% 200%;/*サイズを大きくひきのばす*/
+  animation: bggradient 20s ease infinite;
+}
+
+
+@keyframes bggradient{
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.disappear{
+  filter: alpha(opacity=0);
+  -moz-opacity:0;
+  opacity:0;
+}
+.disappear:hover{
+  filter: alpha(opacity=100);
+  -moz-opacity:1;
+  opacity:1;
+}
+/*========= モーダル表示のためのCSS ===============*/
+
+/*全て共通：hideエリアをはじめは非表示*/
+.hide-area{
+  display: none;
+}
+
+/*全て共通：モーダルのボタンの色を変更したい場合*/
+.modaal-close:after, 
+.modaal-close:before{
+  background:#ccc;  
+}
+
+.modaal-close:focus:after,
+.modaal-close:focus:before,
+.modaal-close:hover:after,
+.modaal-close:hover:before{
+  background:#666;
+}
+
+/*確認を促すモーダル：タイトルの色を変更したい場合*/
+#modaal-title{
+  font-size:1.2rem;
+  text-align: center;
+  margin: 0 0 20px 0;
+}
+
+/*以下はコンテンツ内のレイアウト*/
+.info-list dl,
+.gallery-list{
+  display: flex;
+}
+
+.info-list dt{
+  margin:0 10px 0 0;
+}
+
+.gallery-list li{
+  margin:0 10px 0 0;
+}
+
+
+
+/*========= レイアウトのためのCSS ===============*/
+
+header{
+  background: #333;
+}
+
+header h1{
+  font-size:1.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 20px;
+  color: #fff;
+}
+
+h2{
+  font-size:1.2rem;
+  text-align: center;
+  margin: 0 0 30px 0;
+}
+
+ul{
+  list-style: none;
+}
+
+p,ul{
+  margin-top:20px;  
+}
+
+a{
+  color:#333;
+}
+
+small{
+  background:#333;
+  color:#fff;
+  display: block;
+  text-align: center;
+  padding:20px;
+}
+
+
+section{
+  padding:30px;
+}
+
+section:nth-child(2n){
+  background:#f3f3f3; 
+}
+
+img{
+  max-width: 100%;
+  height: auto;
+}
